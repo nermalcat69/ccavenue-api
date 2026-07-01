@@ -100,11 +100,11 @@ Note: You will have to decrypt the above response from "enc_response" parameter.
 
 ### Success
 
-Format: status|type|name|description^ type|name|description|
+Format: status|type$name$description^ type$name$description|
 
 ```text
-0|TASK|First Task|sgsdfgsfgsdfg^TASK|Second Task|Second task notes^TASK|test|test^ITEM|Second
-Task|akshay^ITEM|test|test|
+0|TASK$First Task$sgsdfgsfgsdfg^TASK$Second Task$Second task notes^TASK$test$test^ITEM$Second
+Task$akshay^ITEM$test$test|
 ```
 
 ### Failure

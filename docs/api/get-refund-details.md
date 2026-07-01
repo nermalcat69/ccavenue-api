@@ -134,8 +134,8 @@ refund_status="TS-REFC" />
 Format:
 
 ```text
-error_code|error_desc|reference_no|order_no|order_curr|order_amt|order_status|refund_amt|refund_issue_date|refund_processed_on|refund_completion_date|refund_bank_ref_no|refund_mer_ref_no|refund_status|
-||203000111377|06333954|INR|10.00|Refunded|1.00|2014-09-12 15:11:07.877||2014-09-12 15:12:07.77|2492|A1|TS-REFC^1.00|2014-09-12 15:11:13.99||2014-09-12 15:12:10.413|2493|A2|TS-REFC|
+error_code|error_desc|reference_no|order_no|order_curr|order_amt|order_status|refund_amt$refund_issue_date$refund_processed_on$refund_completion_date$refund_bank_ref_no$refund_mer_ref_no$refund_status|
+||203000111377|06333954|INR|10.00|Refunded|1.00$2014-09-12 15:11:07.877$$2014-09-12 15:12:07.77$2492$A1$TS-REFC^1.00$2014-09-12 15:11:13.99$$2014-09-12 15:12:10.413$2493$A2$TS-REFC|
 ```
 
 Note: You will have to decrypt the above response from "enc_response" parameter. Kindly refer to the decryption section.
@@ -176,6 +176,6 @@ reference_no="123456789012"
 Format:
 
 ```text
-error_code|error_desc|reference_no|order_no|order_curr|order_amt|order_status|refund_amt|refund_issue_date|refund_processed_on|refund_completion_date|refund_bank_ref_no|refund_mer_ref_no|refund_status|
+error_code|error_desc|reference_no|order_no|order_curr|order_amt|order_status|refund_amt$refund_issue_date$refund_processed_on$refund_completion_date$refund_bank_ref_no$refund_mer_ref_no$refund_status|
 51419|Enc_request: No record found for given criteria.|123456789012||||||
 ```

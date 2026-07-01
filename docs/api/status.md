@@ -92,11 +92,11 @@ Note: You will have to encrypt the above request and store in the "enc_request" 
 | order_gtw_id | Unique payment option Bank name. | Alphabet(6) |
 | order_card_name | Specify the card name for the transaction. | Possible value for card name is "VISA","MASTERCARD","AMEX","JCB","DINERS CLUB". |
 | order_option_type | Specify the payment option type for the order. | String Possible value for payment option type is: OPTCASHC-Cash card, OPTCRDC-Credit Card, OPTDBCRD-Debit Card, OPTEMI-EMI, OPTIVRS-IVRS, OPTMOBP-Mobile Payments, OPTNBK-Net Banking |
-| Merchant_param1 | Temp parameters value update by merchant at transaction time for further use. | String |
-| Merchant_param2 | Temp parameters value update by merchant at transaction time for further use. | String |
-| Merchant_param3 | Temp parameters value update by merchant at transaction time for further use. | String |
-| Merchant_param4 | Temp parameters value update by merchant at transaction time for further use. | String |
-| Merchant_param5 | Temp parameters value update by merchant at transaction time for further use. | String |
+| param_value1 | Temp parameters value update by merchant at transaction time for further use. | String |
+| param_value2 | Temp parameters value update by merchant at transaction time for further use. | String |
+| param_value3 | Temp parameters value update by merchant at transaction time for further use. | String |
+| param_value4 | Temp parameters value update by merchant at transaction time for further use. | String |
+| param_value5 | Temp parameters value update by merchant at transaction time for further use. | String |
 | page_count | Total pages available based on no_of_records in the request. | Example: no_of_records sent in request was 100, total_records matching the lookup criteria were 1000, page_count will be 10 (total_records / no_of_records) rounded to the ceiling. |
 | total_records | Total no. of orders matching the lookup criteria. |  |
 | error_desc | Reason if search criteria did not find the orders for the transactions. | String. Please refer below table for failure message. |
@@ -152,11 +152,11 @@ Ambad</order_ship_address>
 <order_status>Successful</order_status>
 <order_status_date_time>2015-09-16 15:06:13.243</order_status_date_time>
 <order_tax>0.0028</order_tax>
-< Merchant_param1>Mobile No9595226054</ Merchant_param1>
-< Merchant_param2>Flight from Dehli</ Merchant_param2>
-< Merchant_param3>ToMumbai</ Merchant_param3>
-< Merchant_param4>Mobile No9595226054</ Merchant_param4>
-< Merchant_param5>Mobile No9595226054</ Merchant_param5>
+<param_value1>Mobile No9595226054</param_value1>
+<param_value2>Flight from Dehli</param_value2>
+<param_value3>ToMumbai</param_value3>
+<param_value4>Mobile No9595226054</param_value4>
+<param_value5>Mobile No9595226054</param_value5>
 <reference_no>204000163469</reference_no>
 <status>0</status>
 </Order_Status_Result>
@@ -219,12 +219,12 @@ Note: You will have to decrypt the above response from "enc_response" parameter.
 "order_gtw_id":"ICICI",
 "order_bank_response":"Transaction Successful",
 "order_option_type":"OPTCRDC", "order_TDS":0.0,
-"order_device_type":"PC", "
-Merchant_param1":"Mobile No9595226054", "
-Merchant_param2":"Flight from Dehli", "
-Merchant_param3":"ToMumbai", "
-Merchant_param4":"Mobile No9595226054", "
-Merchant_param5":"Mobile No9595226054",
+"order_device_type":"PC",
+"param_value1":"Mobile No9595226054",
+"param_value2":"Flight from Dehli",
+"param_value3":"ToMumbai",
+"param_value4":"Mobile No9595226054",
+"param_value5":"Mobile No9595226054",
 "error_desc":"",
 "status":0,
 "error_code":""
@@ -255,8 +255,8 @@ time|order_delivery_details|order_device_type|order_fraud_status|order_gateway_i
 der_no| order_notes|order_option_type|order_shiping_name|order_ship_email|order_ship_address|order
 _ship_city|order_ship_state|order_ship_country|order_ship_telephone_no|order_ship_zip|order_
 status_date_time|order_TDS|order_amount|order_capture_amount|order_discount|order_fee_fla
-t|order_fee_perc|order_fee_perc_value|order_gross_amount|order_tax|Merchant_param1|
-Merchant_param2| Merchant_param3| Merchant_param4| Merchant_param5|
+t|order_fee_perc|order_fee_perc_value|order_gross_amount|order_tax|param_value1|param_value
+2|param_value3|param_value4|param_value5|
 ```
 
 Example:

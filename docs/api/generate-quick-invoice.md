@@ -112,7 +112,7 @@ Invoice_Currency Invoice_Amount or pay online at Pay_Link.",
 Format:
 
 ```text
-customer_name|currency|valid_for|valid_type|amount|bill_delivery_type|merchant_reference_no|merchant_reference_no1|merchant_reference_no2|sub_acc_id|terms_and_conditions|mobile_no|sms_content|customer_email_id|customer_email_subject|invoice_description|file_name|file_content^file_name|file_content|
+customer_name|currency|valid_for|valid_type|amount|bill_delivery_type|merchant_reference_no|merchant_reference_no1|merchant_reference_no2|sub_acc_id|terms_and_conditions|mobile_no|sms_content|customer_email_id|customer_email_subject|invoice_description|file_name$file_content^file_name$file_content|
 ```
 
 Example:
@@ -121,7 +121,7 @@ Example:
 xxxxxxx|INR|2|days|1.00|SMS|123456987|44785555654|4444545477878|sub1|terms and
 condition|9874563215|Pls call 022-2121212121 to pay your LegalEntity_Name bill# Invoice_ID
 for Invoice_Currency Invoice_Amount or pay online at Pay_Link.|xxxxx.xxxx@xxxx.com|test invoice mail|this invoice
-generate for testing|invoice.doc|77u/SGVsbG8gaW5kaWEK|
+generate for testing|invoice.doc$77u/SGVsbG8gaW5kaWEK|
 ```
 
 ## XML Response

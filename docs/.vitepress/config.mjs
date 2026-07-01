@@ -76,6 +76,11 @@ export default defineConfig({
 
     search: {
       provider: 'local'
+    },
+
+    footer: {
+      message: 'Made by <a href="https://arjunaditya.xyz" target="_blank" rel="noopener">Arjun Aditya</a>',
+      copyright: 'Unofficial documentation, not affiliated with CCAvenue / Avenues India Pvt. Ltd.'
     }
   }
 })

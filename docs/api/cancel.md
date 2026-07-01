@@ -47,9 +47,9 @@ Note: You will have to encrypt the above request and store in the "enc_request" 
 
 ### Example STRING Request
 
-Format: `reference_no|amt|reference_no|amt|`
+Format: `reference_no$amt|reference_no$amt|`
 
-Example: `203000099429|1.00|203000104640|101.23|`
+Example: `203000099429$1.00|203000104640$101.23|`
 
 Note: You will have to encrypt the above request and store in the "enc_request" parameter before sending it to CCAvenue. Kindly refer to the encryption section.
 
@@ -101,8 +101,8 @@ Note: You will have to decrypt the above response from "enc_response" parameter.
 
 ### Example STRING Response
 
-Format: `success_count|error_code|reference_no|reason^error_code|reference_no|reason|`
+Format: `success_count|error_code$reference_no$reason^error_code$reference_no$reason|`
 
-Example: `0|51304|123456788|Invalid order/tracking id^51206|123456788|Order List: Invalid Parameter|`
+Example: `0|51304 $123456788$ Invalid order/tracking id ^51206$123456788$Order List: Invalid Parameter|`
 
 Note: You will have to decrypt the above response from "enc_response" parameter. Kindly refer to the decryption section.

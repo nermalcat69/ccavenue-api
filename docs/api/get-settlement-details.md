@@ -4,6 +4,9 @@ title: Get Settlement Details API
 
 # Get Settlement Details API
 
+> [!WARNING]
+> This endpoint does not appear in the latest CCAvenue API Implementation Guide (`api-docs-by-ccavenue.md`). It may be deprecated, renamed, or replaced by another endpoint (e.g. Payouts Summary / Consolidate Payout Summary). Verify with CCAvenue support before relying on this API in new integrations.
+
 The getSettlementDetails call is used to get the Settlement details such as pay id, Utr No and settlement date. It works on XML and JSON request format only and version 1.2
 
 ## Sample Request

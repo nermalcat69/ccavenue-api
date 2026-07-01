@@ -138,7 +138,7 @@ CCAvenue. Kindly refer to the encryption section.
 Format:
 
 ```text
-Customer_Name|Currency|Valid_For|Valid_Type|Customer_Email_Id|Customer_Email_Subject|Customer_Mobile_No|Term & Condition|SMS_Content|Merchant_Reference_number|Item_Name|Item_Quantity|Item_Description|Unit_Cost~Tax_Name|Tax_Amount|Tax_Name|Tax_Amount^Item_Name|Item_Quantity|Item_Description|Unit_Cost~Tax_Name|Tax_Amount|Tax_Name|Tax_Amount|Task_Name|Task_Rate|Task_Hours|Task_Notes~Tax_Name|Tax_Amount|Tax_Name|Tax_Amount^Task_Name|Task_Rate|Task_Hours|Task_Notes~Tax_Name|Tax_Amount|Tax_Name|Tax_Amount|Start_Date|Frequecy|Occurences|Due_Date|Late_Payment_Fees|Late_Payment_Fees_Type|Discount_If_Paid_Within_Due_Date|Discount_Value|Discount_Type|
+Customer_Name|Currency|Valid_For|Valid_Type|Customer_Email_Id|Customer_Email_Subject|Customer_Mobile_No|Term & Condition|SMS_Content|Merchant_Reference_number|Item_Name$Item_Quantity$Item_Description$Unit_Cost~Tax_Name$Tax_Amount$Tax_Name$Tax_Amount^Item_Name$Item_Quantity$Item_Description$Unit_Cost~Tax_Name$Tax_Amount$Tax_Name$Tax_Amount|Task_Name$Task_Rate$Task_Hours$Task_Notes~Tax_Name$Tax_Amount$Tax_Name$Tax_Amount^Task_Name$Task_Rate$Task_Hours$Task_Notes~Tax_Name$Tax_Amount$Tax_Name$Tax_Amount|Start_Date|Frequecy|Occurences|Due_Date|Late_Payment_Fees|Late_Payment_Fees_Type|Discount_If_Paid_Within_Due_Date|Discount_Value|Discount_Type|
 ```
 
 Example:
@@ -146,8 +146,8 @@ Example:
 ```text
 abcd|INR|2|days|xx.xx@xx.info|email subject|9999999999|t&c|Pls call  022-2121212121 to pay your
 LegalEntity_Name bill # Invoice_ID for Invoice_Currency Invoice_Amount or pay online at
-Pay_Link.|MER1234|ITEM|2|FIRST|1.00~Edu Tax|5.0|Pint Tax|2.5|TASK|1.0|2|NEW~STG Tax|7.0|Rent
-Tax|8.0|18-09-2014|Monthly|5|||||||
+Pay_Link.|MER1234|ITEM$2$FIRST$1.00~Edu Tax$5.0$Pint Tax$2.5|TASK$1.0$2$NEW~STG Tax$7.0$Rent
+Tax$8.0|18-09-2014|Monthly|5|||||||
 ```
 
 Note: You will have to encrypt the above request and store in the "enc_request" parameter before sending it to
@@ -266,7 +266,7 @@ sending it to CCAvenue. Kindly refer to the encryption section.
 Format:
 
 ```text
-Customer_Name|Currency|Valid_For|Valid_Type|Customer_Email_Id|Customer_Email_Subject|Customer_Mobile_No|Term & Condition|SMS_Content|Merchant_Reference_No|merchant_reference_no1|merchant_reference_no2|sub_acc_id|Item_Name|Item_Quantity|Item_Description|Unit_Cost~Tax_Name|Tax_Amount|Tax_Name|Tax_Amount^ Item_Name|Item_Quantity|Item_Description|Unit_Cost~Tax_Name|Tax_Amount|Tax_Name|Tax_Amount|Task_Name|Task_Rate|Task_Hours|Task_Notes~Tax_Name|Tax_Amount|Tax_Name|Tax_Amount^Task_Name|Task_Rate|Task_Hours|Task_Notes~Tax_Name|Tax_Amount|Tax_Name|Tax_Amount|Start_Date|Frequecy|Occurences|Due_Date|Late_Payment_Fees|Late_Payment_Fees_Type|Discount_If_Paid_Within_Due_Date|Discount_Value|Discount_Type|
+Customer_Name|Currency|Valid_For|Valid_Type|Customer_Email_Id|Customer_Email_Subject|Customer_Mobile_No|Term & Condition|SMS_Content|Merchant_Reference_number|Item_Name$Item_Quantity$Item_Description$Unit_Cost~Tax_Name$Tax_Amount$Tax_Name$Tax_Amount^Item_Name$Item_Quantity$Item_Description$Unit_Cost~Tax_Name$Tax_Amount$Tax_Name$Tax_Amount|Task_Name$Task_Rate$Task_Hours$Task_Notes~Tax_Name$Tax_Amount$Tax_Name$Tax_Amount^Task_Name$Task_Rate$Task_Hours$Task_Notes~Tax_Name$Tax_Amount$Tax_Name$Tax_Amount|Start_Date|Frequecy|Occurences|Due_Date|Late_Payment_Fees|Late_Payment_Fees_Type|Discount_If_Paid_Within_Due_Date|Discount_Value|Discount_Type|
 ```
 
 Example:
@@ -274,7 +274,7 @@ Example:
 ```text
 abcd|INR|2|days|xx.xx@xx.info|email subject|9999999999|t and c|Pls call  022-2121212121 to pay your
 LegalEntity_Name bill# Invoice_ID for Invoice_Currency Invoice_Amount or pay online at
-Pay_Link.|MER1234|ITEM|2|FIRST|1.00~Edu Tax|5.0|Pint Tax|2.5|TASK|1.0|2|NEW~STG Tax|7.0|Rent Tax|8.0|18-
+Pay_Link.|MER1234|ITEM$2$FIRST$1.00~Edu Tax$5.0$Pint Tax$2.5|TASK$1.0$2$NEW~STG Tax$7.0$Rent Tax$8.0|18-
 09-2014|Monthly|5|1|2.5|Perc|1|1.50|Perc|
 ```
 

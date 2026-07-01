@@ -170,11 +170,11 @@ section.
 Format:
 
 ```text
-customer_card_id|customer_card_no(last four digits)|customer_card_name|customer_card_type|customer_payopt_type|customer_card_label|customer_email|customer_card_expiry|customer_card_issuing_bank^customer_card_id|customer_card_no(last four digits|customer_card_name|customer_card_type|customer_payopt_type|customer_card_label|customer_email|customer_card_expiry|customer_card_issuing_bank|
+customer_card_id$customer_card_no(last four digits)$customer_card_name$customer_card_type$customer_payopt_type$customer_card_label$customer_email$customer_card_expiry$customer_card_issuing_bank^customer_card_id$customer_card_no(last four digits$customer_card_name$customer_card_type$customer_payopt_type$customer_card_label$customer_email$customer_card_expiry$customer_card_issuing_bank|
 ```
 
-Example:27|"1234"|MasterCard|CRDC|OPTCRDC|"xxxx"|"xxxx@xxx.com"^29|"4567"|MasterCard| CRDC|
-OPTCRDC|"xxxx"|"xxxx@xxx.com"|"10/2020"|"xxxx"
+Example:27$"1234"$MasterCard$CRDC$OPTCRDC$"xxxx"$"xxxx@xxx.com"^29$"4567"$MasterCard$ CRDC$
+OPTCRDC$"xxxx"$"xxxx@xxx.com"$"10/2020"$"xxxx"
 
 #### Failure
 

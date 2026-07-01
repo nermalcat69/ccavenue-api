@@ -4,6 +4,9 @@ title: Consolidate Payout Summary API
 
 # Consolidate Payout Summary API
 
+> [!WARNING]
+> This endpoint does not appear in the latest CCAvenue API Implementation Guide (`api-docs-by-ccavenue.md`). It may be deprecated, renamed, or replaced by another endpoint (e.g. Payouts Summary). Verify with CCAvenue support before relying on this API in new integrations.
+
 ConsolidatePayouts Summary API call is used to list payouts summary for a merchant for a given settlement date.
 
 ## Request Parameters

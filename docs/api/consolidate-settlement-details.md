@@ -4,6 +4,9 @@ title: Consolidate Settlement Details API
 
 # Consolidate Settlement Details API
 
+> [!WARNING]
+> This endpoint does not appear in the latest CCAvenue API Implementation Guide (`api-docs-by-ccavenue.md`). It may be deprecated, renamed, or replaced by another endpoint (e.g. getRefundDetails / Get Settlement Details). Verify with CCAvenue support before relying on this API in new integrations.
+
 ConsolidateSettlementDetails API call is used to list Settelement Details for a merchant for a given Order Number And Reference Number.
 
 ## Request Parameters

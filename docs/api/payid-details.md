@@ -16,8 +16,7 @@ PayId Details API call is used to list transactions for a given PayId.
 | response_type (optional) | API returns responses in XML, JSON or String format. If left blank, the response will be in the same format as request. | Possible value for response_type is "XML" or "JSON" |
 | Command (required) | Command value specifies the API calls. You must send this with each request. | Possible value for this API call is "payIdDetails". |
 | pay_id (required) | Provide the settlement Date to find the payouts list. | Numeric(25). |
-| page_number (required) | A limited number of records are shared as part of the response. The total records & number of pages are shared as part of the response to enable subsequent calls. | Numeric(4). |
-| no_of_records (required) | Number of records which are available in pages. | Numeric. |
+| page_number (optional) | A limited number of records are shared as part of the response. The total records & number of pages are shared as part of the response to enable subsequent calls. | Numeric(4). |
 
 ## Example XML Request
 
@@ -26,7 +25,6 @@ PayId Details API call is used to list transactions for a given PayId.
 <pay_id_details_query>
 <pay_id>XXXXX</pay_id>
 <page_number>1</page_number>
-<no_of_records>300</ no_of_records >
 </pay_id_details_query>
 ```
 
@@ -38,7 +36,6 @@ Note: You will have to encrypt the above request and store in the "enc_request" 
 {
 'pay_id':'XXXXX',
 ‘page_number’:1
-‘no_of_records’:300
 }
 ```
 

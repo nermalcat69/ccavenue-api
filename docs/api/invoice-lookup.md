@@ -22,7 +22,6 @@ Invoice lookup API call is used to find the list of all invoices.
 | created_by (optional) | Unique identification of the merchant for the generate invoice. | String(Unique id of Merchant) |
 | mobile_no (optional) | Customer mobile number for the generate invoice. | Numbers(10) |
 | email_id (optional) | Customer email id for the generate invoice. | Alphanumeric with special characters (hyphen, underscore, dot, @)(70). |
-| invoice_no | Reference number generated from the merchant end. | Numeric(25) |
 | reference_no (optional) | Unique CCAvenue reference number for the transaction. | Numeric(25) |
 | invoice_id (optional) | Unique CCAvenue bill id for the generate invoice. | Numeric value(25) |
 | invoice_type (optional) | Provide only possible value of the invoice type. | The possible values for invoice type is quick/invoice/recurring |
@@ -262,16 +261,16 @@ Note: You will have to decrypt the above response from "enc_response" parameter.
 ### String Format
 
 ```text
-page_count|total_records|Invoice_Id|Invoice_ref_no|Invoice_Created_By|Order_No|Order_Type|Order_Currency|Order_Amt|Order_Date_time|Order_Notes|
-Order_Ip|Order_Status||Order_Bank_Response|Order_Bank_Mid|Order_Bank_Ref_No|Order_Status_Date_Time|Order_Fraud_Status|Order_Card_Name|Order_Card_Type
-|Order_Gtw_Id|Order_Gross_Amt|Order_Discount|Order_Capt_Amt|Order_Fee_Flat|Order_Fee_Perc
-|Order_Tax|Order_Delivery_Details|Order_Bill_Name|Order_Bill_Email|Order_Bill_Tel|Order_Bill_Address|Order_Bill_City|Order_Bill_State|Order_Bill_Country|Order_Bill_Zip|Order_Ship_Name|Order_Ship_Email|Order_Ship_Tel|Order_Ship_Address|Order_Ship_City|Order_Ship_State|Order_Ship_Country|Order_Ship_Zip^|
+page_count|total_records|Invoice_Id$Invoice_ref_no$Invoice_Created_By$Order_No$Order_Type$Order_Currency$Order_Amt$Order_Date_time$Order_Notes$
+Order_Ip$Order_Status$$Order_Bank_Response$Order_Bank_Mid$Order_Bank_Ref_No$Order_Status_Date_Time$Order_Fraud_Status$Order_Card_Name$Order_Card_Type
+$Order_Gtw_Id$Order_Gross_Amt$Order_Discount$Order_Capt_Amt$Order_Fee_Flat$Order_Fee_Perc
+$Order_Tax$Order_Delivery_Details$Order_Bill_Name$Order_Bill_Email$Order_Bill_Tel$Order_Bill_Address$Order_Bill_City$Order_Bill_State$Order_Bill_Country$Order_Bill_Zip$Order_Ship_Name$Order_Ship_Email$Order_Ship_Tel$Order_Ship_Address$Order_Ship_City$Order_Ship_State$Order_Ship_Country$Order_Ship_Zip^|
 ```
 
 ### Success
 
 ```text
-1|1|xxxxxx|xxxxxxx|API|xxxxx|xx-xxx|xxxx|xx.xx|xxxx-xx-xx xx:xx:xx.xxx||xxx.xxx.xxx.xxx|xxxx|xxxxxx|xxxxxxx|xxxxxx|xxxx-xx-xx xx:xx:xx.xxx|xx|xxxxxx|xxxx|xxxx|xx.xx|x.x|x.xx|x.x|xx.x|x.xxxx||xxxx|xxxx@xxx.com|xxxxxxxx|xxx|xxxx|xxxx|xxxx|xxxx|xxxx xxxx||xxxxxxx|xxxxx xxxx|xxxxxx|xx|xxxxx|xxxxxx|
+1|1|xxxxxx$xxxxxxx$API$xxxxx$xx-xxx$xxxx$xx.xx$xxxx-xx-xx xx:xx:xx.xxx$$xxx.xxx.xxx.xxx$xxxx$xxx xxx$xxxxxxx$xxxxxx$xxxx-xx-xx xx:xx:xx.xxx$xx$xxxxxx$xxxx$xxxx$xx.xx$x.x$x.xx$x.x$xx.x$x.xxxx$$xxxx$xxxx@xxx.com$xxxxxxxx$xxx$xxxx$xxxx$xxxx$xxxx$xxxx xxxx$$xxxxxxx$xxxxx xxxx$xxxxxx$xx$xxxxx$xxxxxx|
 ```
 
 ### Failure

@@ -20,7 +20,7 @@ using the flexibility of Invoice settings.
 | customer_email_id (required) | Email ID on which the Invoice will be sent | Alphanumeric with special characters (hyphen, underscore, dot, @)(70). |
 | customer_email_subject (required) | Subject of the email containing the Invoice | Alphanumeric with special characters (hyphens, dot, space and underscores)(100). |
 | valid_for (required) | Duration for which the Invoice is valid | Numeric(4). |
-| valid_type (required) | The unit of duration represented by valid_for | Possible values for valid type is minutes/hours/days |
+| valid_type (required) | The unit of duration represented by valid_for | Possible values for valid type is minutes/hours/days/month/year |
 | Currency (required) | Currency for which the Invoice is to be generated | String Example: INR – Indian Rupee USD – United States Dollar SGD – Singapore Dollar GBP– Pound Sterling EUR – Euro, official currency of Eurozone |
 | merchant_reference_no (optional) | Merchant identifier for the Invoice | Alphanumeric with special characters (hyphen and underscore)(25). |
 | merchant_reference_no1 (optional) | Merchant identifier for the Invoice | Alphanumeric with special characters (hyphen and underscore and hash)(100). |
@@ -177,7 +177,7 @@ CCAvenue. Kindly refer to the encryption section.
 Format:
 
 ```text
-Customer_Name|Currency|Valid_For|Valid_Type|Customer_Email_Id|Customer_Email_Subject|Customer_Mobile_No|Term & Condition|SMS_Content|Merchant_Reference_No|merchant_reference_no1|merchant_reference_no2|sub_acc_id|Item_Name|Item_Quantity|Item_Description|Unit_Cost~Tax_Name|Tax_Amount|Tax_Name|Tax_Amount^Item_Name|Item_Quantity|Item_Description|Unit_Cost~Tax_Name|Tax_Amount|Tax_Name|Tax_Amount|Task_Name|Task_Rate|Task_Hours|Task_Notes~Tax_Name|Tax_Amount|Tax_Name|Tax_Amount^Task_Name|Task_Rate|Task_Hours|Task_Notes~Tax_Name|Tax_Amount|Tax_Name|Tax_Amount|Due_Date|Late_Payment_Fees|Late_Payment_Fees_Type|Discount_If_Paid_Within_Due_Date|Discount_Value|Discount_Type|
+Customer_Name|Currency|Valid_For|Valid_Type|Customer_Email_Id|Customer_Email_Subject|Customer_Mobile_No|Term & Condition|SMS_Content|Merchant_Reference_No|merchant_reference_no1|merchant_reference_no2|sub_acc_id|Item_Name$Item_Quantity$Item_Description$Unit_Cost~Tax_Name$Tax_Amount$Tax_Name$Tax_Amount^Item_Name$Item_Quantity$Item_Description$Unit_Cost~Tax_Name$Tax_Amount$Tax_Name$Tax_Amount|Task_Name$Task_Rate$Task_Hours$Task_Notes~Tax_Name$Tax_Amount$Tax_Name$Tax_Amount^Task_Name$Task_Rate$Task_Hours$Task_Notes~Tax_Name$Tax_Amount$Tax_Name$Tax_Amount|Due_Date|Late_Payment_Fees|Late_Payment_Fees_Type|Discount_If_Paid_Within_Due_Date|Discount_Value|Discount_Type|
 ```
 
 Example:
@@ -185,8 +185,8 @@ Example:
 ```text
 abcd|INR|2|days|xx.xx@xx.info|email subject|1234567890|term and condition|Pls call  022-2121212121 to
 pay your LegalEntity_Name bill# Invoice_ID for Invoice_Currency Invoice_Amount or pay online at
-Pay_Link.|MER123654|44785555654|4444545477878|sub1|ITEM|2|FIRST|1.00~Edu Tax|5.0|Pint
-Tax|2.5|TASK|1.0|2|NEW~STG Tax|7.0|Rent Tax|8.0|||||||
+Pay_Link.|MER123654|44785555654|4444545477878|sub1|ITEM$2$FIRST$1.00~Edu Tax$5.0$Pint
+Tax$2.5|TASK$1.0$2$NEW~STG Tax$7.0$Rent Tax$8.0|||||||
 ```
 
 Note: You will have to encrypt the above request and store in the "enc_request" parameter before sending it to
@@ -308,7 +308,7 @@ CCAvenue. Kindly refer to the encryption section.
 Format:
 
 ```text
-Customer_Name|Currency|Valid_For|Valid_Type|Customer_Email_Id|Customer_Email_Subject|Customer_Mobile_No|Term & Condition|SMS_Content|Merchant_Reference_No|merchant_reference_no1|merchant_reference_no2|sub_acc_id|Item_Name|Item_Quantity|Item_Description|Unit_Cost~Tax_Name|Tax_Amount|Tax_Name|Tax_Amount^ Item_Name|Item_Quantity|Item_Description|Unit_Cost~Tax_Name|Tax_Amount|Tax_Name|Tax_Amount|Task_Name|Task_Rate|Task_Hours|Task_Notes~Tax_Name|Tax_Amount|Tax_Name|Tax_Amount^Task_Name|Task_Rate|Task_Hours|Task_Notes~Tax_Name|Tax_Amount|Tax_Name|Tax_Amount|Due_Date|Late_Payment_Fees|Late_Payment_Fees_Type|Discount_If_Paid_Within_Due_Date|Discount_Value|Discount_Type|
+Customer_Name|Currency|Valid_For|Valid_Type|Customer_Email_Id|Customer_Email_Subject|Customer_Mobile_No|Term & Condition|SMS_Content|Merchant_Reference_No|merchant_reference_no1|merchant_reference_no2|sub_acc_id|Item_Name$Item_Quantity$Item_Description$Unit_Cost~Tax_Name$Tax_Amount$Tax_Name$Tax_Amount^ Item_Name$Item_Quantity$Item_Description$Unit_Cost~Tax_Name$Tax_Amount$Tax_Name$Tax_Amount|Task_Name$Task_Rate$Task_Hours$Task_Notes~Tax_Name$Tax_Amount$Tax_Name$Tax_Amount^Task_Name$Task_Rate$Task_Hours$Task_Notes~Tax_Name$Tax_Amount$Tax_Name$Tax_Amount|Due_Date|Late_Payment_Fees|Late_Payment_Fees_Type|Discount_If_Paid_Within_Due_Date|Discount_Value|Discount_Type|
 ```
 
 Example:
@@ -316,8 +316,8 @@ Example:
 ```text
 abcd|INR|2|days|xx.xx@xx.info|email subject|1234567890|term and condition|Pls call  022-2121212121 to
 pay your LegalEntity_Name bill# Invoice_ID for Invoice_Currency Invoice_Amount or pay online at
-Pay_Link.|MER1234654|44785555654|4444545477878|sub1|ITEM|2|FIRST|1.00~Edu Tax|5.0|Pint
-Tax|2.5|TASK|1.0|2|NEW~STG Tax|7.0|Rent Tax|8.0|1|2.5|Perc|1|1.50|Perc|
+Pay_Link.|MER1234654|44785555654|4444545477878|sub1|ITEM$2$FIRST$1.00~Edu Tax$5.0$Pint
+Tax$2.5|TASK$1.0$2$NEW~STG Tax$7.0$Rent Tax$8.0|1|2.5|Perc|1|1.50|Perc|
 ```
 
 Note: You will have to encrypt the above request and store in the "enc_request" parameter before sending it to

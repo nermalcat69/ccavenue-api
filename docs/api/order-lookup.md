@@ -18,14 +18,14 @@ The Lookup API call can be used to extract transaction details for a certain set
 | reference_no (optional) | Unique CCAvenue reference number for the transaction. | Numeric(25). |
 | from_date (required) | Provide the Start Date to find the orders list. | Date must be in IST (dd-mm-yyyy) format. |
 | to_date (optional) | Provide the end date to search the orders between from date and to date. It should be greater than or equal to from date. | Date must be in IST (dd-mm-yyyy) format. |
-| order_currency (optional) | Currency in which you processed the transaction. You can send the multiple currencies format. | String Example: INR – Indian Rupee, USD – United States Dollar, SGD – Singapore Dollar, GBP – Pound Sterling, EUR – Euro, official currency of Eurozone. Multiple currency format: INR\|USD\|GBP in JSON & XML request type but INR\|USD\|GBP in STRING request type |
+| order_currency (optional) | Currency in which you processed the transaction. You can send the multiple currencies format. | String Example: INR – Indian Rupee, USD – United States Dollar, SGD – Singapore Dollar, GBP – Pound Sterling, EUR – Euro, official currency of Eurozone. Multiple currency format: INR\|USD\|GBP in JSON & XML request type but INR$USD$GBP in STRING request type |
 | order_email (optional) | Email address used to purchase the order. | Alphanumeric with special characters (hyphen, underscore, dot, @)(70). |
 | order_fraud_status (optional) | Specify whether orders are valid or not. | String Possible Values are: 1) Value "High" denotes "High Risk" 2) Value "Low" denotes "Low Risk" 3) Value "NR" denotes "No Risk" 4) Value "GA" denotes "Go Ahead" 5) Value "NA" denotes "Not Applicable" |
 | order_min_amount (optional) | Minimum amount limit for search criteria for the transaction. | Decimal(12,2). |
 | order_max_amount (optional) | Maximum amount limit for search criteria for the transaction. | Decimal(12,2). |
 | order_name (optional) | Customer name for the transaction. | Alphanumeric with special character (space, hyphen, apostrophe, underscore, dot)(60). |
 | order_no (optional) | Unique merchant order no for the transaction. | AlphaNumeric with special characters (hyphen and underscore)(60). |
-| order_payment_type (optional) | Payment Mode for the transaction. It can be single or multiple. | String Below are the Possible Values: 1) CASHC (Cash Card Payment Type) 2) CRDC (Credit Card Payment Type) 3) DBCRD (Debit Card Payment Type) 4) MOBP (Mobile Payment Type) 5) NBK (Net Banking). Multiple values format: MOBP\|NBK for JSON & XML request type but MOBP\|NBK for STRING request type. |
+| order_payment_type (optional) | Payment Mode for the transaction. It can be single or multiple. | String Below are the Possible Values: 1) CASHC (Cash Card Payment Type) 2) CRDC (Credit Card Payment Type) 3) DBCRD (Debit Card Payment Type) 4) MOBP (Mobile Payment Type) 5) NBK (Net Banking). Multiple values format: MOBP\|NBK for JSON & XML request type but MOBP$NBK for STRING request type. |
 | order_status (optional) | Status of the order. It can be single or multiple. | String Possible values are: Aborted (transaction is cancelled by the User); Auto-Cancelled (transaction has not confirmed within 12 days hence auto cancelled by system); Auto-Reversed (two identical transactions for same order number, both were successful at bank's end but we got response for only one of them, then next day during reconciliation we mark one of the transaction as auto reversed); Awaited (transaction is processed from billing shipping page but no response is received); Cancelled (transaction is cancelled by merchant); Chargeback(); Invalid (Transaction sent to CCAvenue with Invalid parameters, hence could not be processed further); Fraud (we update this during recon, the amount is different at bank's end and at CCAvenue due to tampering); Initiated (transaction just arrived on billing shipping page and not processed further); Refunded (Transaction is refunded.); Shipped (transaction is confirmed); Successful; System refund (Refunded by CCAvenue for various finds of reversals by CCAvenue); Unsuccessful (transaction is not successful due to) |
 | order_type (optional) | Type of the order. | String Different types of Orders: 1) OT-INV denotes "Invoice" 2) OT-ORD denotes "Orders" 3) OT-ORDSC denotes "Shopping Cart Orders" 4) OT-PPAY denotes "Phone Pay" 5) OT-SNIP denotes "SNIP orders" |
 | order_bill_tel (optional) | Customer mobile number for the transaction. | Numeric(10). |
@@ -140,11 +140,6 @@ Note: You will have to encrypt the above request and store in the "enc_request" 
 | order_gtw_id | Unique payment option Bank name. | Alphabet(6) |
 | order_card_name | Specify the card name for the transaction. | Possible value for card name is "VISA","MASTERCARD","AMEX","JCB","ECRD","DINERS CLUB","DSNV","CTBL","CVMS". |
 | order_option_type | Specify the payment option type for the order. | String Possible value for payment option type is OPTCASHC-Cash card, OPTCRDC-Credit Card, OPTDBCRD-Debit Card, OPTEMI-EMI, OPTIVRS-IVRS, OPTMOBP-Mobile Payments, OPTNBK-Net Banking |
-| Merchant_param1 | Temp parameters value update by merchant at transaction time for further use. | String |
-| Merchant_param2 | Temp parameters value update by merchant at transaction time for further use. | String |
-| Merchant_param3 | Temp parameters value update by merchant at transaction time for further use. | String |
-| Merchant_param4 | Temp parameters value update by merchant at transaction time for further use. | String |
-| Merchant_param5 | Temp parameters value update by merchant at transaction time for further use. | String |
 | error_desc | Reason if search criteria did not find the orders for the transactions. | String Please refer below table for failure message. |
 | error_code | Error code for Failure reason. | String Please refer below table for failure message. |
 | page_count | Total pages available based on no_of_records in the request | Example: no_of_records sent in request was 100, total_records matching the lookup criteria were 1000, page_count will be 10 (total_records / no_of_records) rounded to the ceiling |
@@ -258,11 +253,6 @@ Note: You will have to decrypt the above response from "enc_response" parameter.
 "order_bank_response":"Invalid Credentials",
 "order_option_type":"OPTCRDC",
 "order_device_type":"PC"
-Merchant_param1":"Mobile No9595226054", "
-Merchant_param2":"Flight from Dehli", "
-Merchant_param3":"ToMumbai", "
-Merchant_param4":"Mobile No9595226054", "
-Merchant_param5":"Mobile No9595226054",
 }],
 "page_count":1,
 "total_records":1,
@@ -289,25 +279,23 @@ Note: You will have to decrypt the above response from "enc_response" parameter.
 #### Success Response Format
 
 ```text
-page_count|total_records|reference_no|order_no|order_amount|order_status|order_bank_ref_n
-o|order_bank_response|order_card_name|order_currancy|order_date_time|order_delivery_detai
-ls|order_device_type|order_fraud_status|order_gateway_id|order_ip|order_notes|order_option_
-type|order_bill_name|order_bill_address|order_bill_city|order_bill_state|order_bill_country|orde
-r_bill_zip|order_bill_tel|order_bill_email|order_ship_name|order_ship_address|order_ship_city|o
-rder_ship_state|order_ship_county|order_ship_zip|order_ship_tel|order_ship_email|order_captu
-re_amount|order_discount|order_gross_amount|order_fee_flat|order_fee_perc|order_fee_perc_
-value^||Merchant_param1|Merchant_param2|Merchant_param3|Merchant_param4|
-Merchant_param5|
+page_count|total_records|reference_no$order_no$order_amount$order_status$order_bank_ref_n
+o$order_bank_response$order_card_name$order_currancy$order_date_time$order_delivery_detai
+ls$order_device_type$order_fraud_status$order_gateway_id$order_ip$order_notes$order_option_
+type$order_bill_name$order_bill_address$order_bill_city$order_bill_state$order_bill_country$orde
+r_bill_zip$order_bill_tel$order_bill_email$order_ship_name$order_ship_address$order_ship_city$o
+rder_ship_state$order_ship_county$order_ship_zip$order_ship_tel$order_ship_email$order_captu
+re_amount$order_discount$order_gross_amount$order_fee_flat$order_fee_perc$order_fee_perc_
+value^|
 ```
 
 Example (Successful Response):
 
 ```text
-1|1|204000134595|45289752|1.0|Unsuccessful||Invalid Credentials|MasterCard|INR|2015-03-31
-11:20:44.47||PC|NA|SBI|192.168.2.182|order will be shipped|OPTCRDC|Shashi|Room no 1101, near Railway
-station Ambad|Indore|MP|India|425001|9595226054|xxxxx.xxxx@xxxxxx.xxxx|Shashi|Room no 1101, near
-Railway station Ambad|Indore|MP|India|425001|1234567890||0.0|0.0|1.0|0.0|12.0|0.12| Mobile
-No9595226054|Flight from Dehli|ToMumbai|Mobile No9595226054|Mobile No9595226054|
+1|1|204000134595$45289752$1.0$Unsuccessful$$Invalid Credentials$MasterCard$INR$2015-03-31
+11:20:44.47$$PC$NA$SBI$192.168.2.182$order will be shipped$OPTCRDC$Shashi$Room no 1101, near
+Railway station Ambad$Indore$MP$India$425001$9595226054$xxxxx.xxxx@xxxxxx.xxxx$Shashi$Room no
+1101, near Railway station Ambad$Indore$MP$India$425001$1234567890$$0.0$0.0$1.0$0.0$12.0$0.12|
 ```
 
 #### Failure Response

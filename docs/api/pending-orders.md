@@ -23,7 +23,7 @@ You can optionally confirm only part of an order. Remember, you can do so only o
 | order_email (optional) | Email id of customer to send mail for the generate invoice. | Alphanumeric with special characters (hyphen, underscore, dot, @)(70). |
 | order_bill_tel (optional) | Mobile number of the customer to send the generate invoice. | Numeric(10) |
 | order_fraud_status (optional) | Type of fraud status. | String Possible Values are: 1) Value "High" denotes "High Risk" 2) Value "Low" denotes "Low Risk" 3) Value "NR" denotes "No Risk" 4) Value "GA" denotes "Go Ahead" 5) Value "NA" denotes "Not Applicable" |
-| order_currency (optional) | Currency in which you processed the transaction. You can send the multiple currencies format. | String Example: INR – Indian Rupee, USD – United States Dollar, SGD – Singapore Dollar, GBP – Pound Sterling, EUR – Euro, official currency of Eurozone. Multiple currency format: INR\|USD\|GBP in XML & JSON request type and INR\|USD\|GBP in STRING request type. |
+| order_currency (optional) | Currency in which you processed the transaction. You can send the multiple currencies format. | String Example: INR – Indian Rupee, USD – United States Dollar, SGD – Singapore Dollar, GBP – Pound Sterling, EUR – Euro, official currency of Eurozone. Multiple currency format: INR\|USD\|GBP in XML & JSON request type and INR$UDS$GBP in STRING request type. |
 | order_type (optional) | Type of the order. | String Different types of Orders: 1) OT-INV denotes "Invoice" 2) OT-ORD denotes "Orders" 3) OT-ORDSC denotes "Shopping Cart Orders" 4) OT-PPAY denotes "Phone Pay" 5) OT-SNIP denotes "SNIP orders" |
 | page_number (required) | A limited number of records are shared as part of the response. The total records & number of pages are shared as part of the response to enable subsequent calls. | Numeric(4) |
 
@@ -66,16 +66,16 @@ Note: You will have to encrypt the above request and store in the "enc_request" 
 ### Example STRING Request Format
 
 ```text
-reference_no|order_no|order_bill_name|order_bill_tel|order_currency|order_currency
-|order_currency|order_email|order_fraud_status|order_fraud_status
-|order_fraud_status|order_type|order_type|order_type|page_number|
+reference_no|order_no|order_bill_name|order_bill_tel|order_currency$order_currency
+$order_currency|order_email|order_fraud_status$order_fraud_status
+$order_fraud_status|order_type$order_type$order_type|page_number|
 ```
 
 Example:
 
 ```text
-XXXXXXX|XXXXXX|XXXXX|XXXXXXX|XXX|XXX|XXX|XXX|XXXX@XXXX.com|XX|XXXX|XXX|XX-
-XXX|XX-XXX|1|
+XXXXXXX|XXXXXX|XXXXX|XXXXXXX|XXX$XXX$XXX$XXX|XXXX@XXXX.com|XX$XXXX$XXX|XX-
+XXX$XX-XXX|1|
 ```
 
 Note: You will have to encrypt the above request and store in the "enc_request" parameter before sending it to CCAvenue. Kindly refer to the encryption section.
@@ -284,25 +284,25 @@ Note: You will have to decrypt the above response from "enc_response" parameter.
 #### Success Response Format
 
 ```text
-page_count|total_records|reference_no|order_no|order_status|order_trans_status|order_type|o
-rder_capt_amt|order_discount|order_fee_flat|order_fee_perc|order_fee_perc_value|order_gross
-_amt|order_tax|days_left|order_bank_mid|order_bank_ref_no|order_bank_response|order_bill_
-name|order_bill_email|order_bill_address|order_bill_city|order_bill_state|order_bill_country|ord
-er_bill_tel|order_bill_zip|order_card_name|order_card_type|order_curr|order_date_time|order_
-delivery_details|order_fraud_status|order_gtw_id|order_ip|order_misc_id|order_notes|order_ris
-k_mitigation|order_ship_name|order_ship_email|order_ship_address|order_ship_city|order_ship
-_state|order_ship_country|order_ship_tel|order_ship_zip|order_status_date_time^|
+page_count|total_records|reference_no$order_no$order_status$order_trans_status$order_type$o
+rder_capt_amt$order_discount$order_fee_flat$order_fee_perc$order_fee_perc_value$order_gross
+_amt$order_tax$days_left$order_bank_mid$order_bank_ref_no$order_bank_response$order_bill_
+name$order_bill_email$order_bill_address$order_bill_city$order_bill_state$order_bill_country$ord
+er_bill_tel$order_bill_zip$order_card_name$order_card_type$order_curr$order_date_time$order_
+delivery_details$order_fraud_status$order_gtw_id$order_ip$order_misc_id$order_notes$order_ris
+k_mitigation$order_ship_name$order_ship_email$order_ship_address$order_ship_city$order_ship
+_state$order_ship_country$order_ship_tel$order_ship_zip$order_status_date_time^|
 ```
 
 Example:
 
 ```text
-1|1|204000136232|66885810|Successful|TS-AUTC|OT-
-ORD|0.0|0.0|0.0|4.0|0.04|1.0|0.0049|3|1234567890|289049|Approved|Shashi|xxxxxx.xx@xxxx
-xx.xxxx|Room no 1101, near Railway station
-Ambad|Indore|MP|India|1234567890|425001|Amex|Credit Card|INR|2015-04-13
-10:59:05.517||NA|PGT|192.168.2.182||order will be shipped|Y|Chaplin||room no.701 near bus
-stand|Hyderabad|Andhra|India|1236547892|425001|2015-04-13 10:59:53.217|
+1|1|204000136232$66885810$Successful$TS-AUTC$OT-
+ORD$0.0$0.0$0.0$4.0$0.04$1.0$0.0049$3$1234567890$289049$Approved$Shashi$xxxxxx.xx@xxxx
+xx.xxxx$Room no 1101, near Railway station
+Ambad$Indore$MP$India$1234567890$425001$Amex$Credit Card$INR$2015-04-13
+10:59:05.517$$NA$PGT$192.168.2.182$$order will be shipped$Y$Chaplin$$room no.701 near bus
+stand$Hyderabad$Andhra$India$1236547892$425001$2015-04-13 10:59:53.217|
 ```
 
 #### Failure Response
