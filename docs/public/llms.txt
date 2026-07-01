@@ -2,6 +2,8 @@
 
 > Merchant's API Implementation Guide for the CCAvenue payment gateway. Covers authentication, request/response encryption, and the full set of server-to-server API calls for managing orders, customer payment options, invoices, and settlements.
 
+Full content of every page on this site, concatenated: https://nermalcat69.github.io/ccavenue-api/llms-full.txt
+
 ## Guide
 
 - [API Authentication](https://nermalcat69.github.io/ccavenue-api/guide/authentication): Merchant credentials, IP whitelisting, and the full list of supported API calls.

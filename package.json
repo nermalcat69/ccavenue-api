@@ -3,7 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "predocs:dev": "node scripts/generate-llms-full.mjs",
     "docs:dev": "vitepress dev docs",
+    "predocs:build": "node scripts/generate-llms-full.mjs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
