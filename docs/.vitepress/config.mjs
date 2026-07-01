@@ -20,6 +20,7 @@ export default defineConfig({
           { text: 'Overview', link: '/' },
           { text: 'API Authentication', link: '/guide/authentication' },
           { text: 'Encryption & Decryption', link: '/guide/encryption-decryption' },
+          { text: 'Custom Checkout Page', link: '/guide/custom-checkout-page' },
           { text: 'Error Codes', link: '/guide/error-codes' }
         ]
       },
