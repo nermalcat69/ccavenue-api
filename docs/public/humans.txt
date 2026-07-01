@@ -1,0 +1,9 @@
+/* TEAM */
+Maintainer: nermalcat69
+Site: https://github.com/nermalcat69/ccavenue.github.io
+
+/* SITE */
+Last update: 2026-07-01
+Standards: HTML5, CSS3
+Components: VitePress
+Software: Node.js, Vite
