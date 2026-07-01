@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'CCAvenue API Docs',
   description: "Merchant's API Implementation Guide for the CCAvenue payment gateway",
-  base: '/',
+  base: '/ccavenue.github.io/',
   cleanUrls: true,
 
   themeConfig: {
