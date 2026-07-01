@@ -4,43 +4,43 @@
 
 ## Guide
 
-- [API Authentication](https://nermalcat69.github.io/ccavenue.github.io/guide/authentication): Merchant credentials, IP whitelisting, and the full list of supported API calls.
-- [Encryption & Decryption](https://nermalcat69.github.io/ccavenue.github.io/guide/encryption-decryption): How to encrypt requests and decrypt responses using AES.
-- [Error Codes](https://nermalcat69.github.io/ccavenue.github.io/guide/error-codes): Full reference table of API error codes and their meanings.
+- [API Authentication](https://nermalcat69.github.io/ccavenue-api/guide/authentication): Merchant credentials, IP whitelisting, and the full list of supported API calls.
+- [Encryption & Decryption](https://nermalcat69.github.io/ccavenue-api/guide/encryption-decryption): How to encrypt requests and decrypt responses using AES.
+- [Error Codes](https://nermalcat69.github.io/ccavenue-api/guide/error-codes): Full reference table of API error codes and their meanings.
 
 ## Order Management
 
-- [Confirm](https://nermalcat69.github.io/ccavenue.github.io/api/confirm): Confirm a pending order for settlement.
-- [Cancel](https://nermalcat69.github.io/ccavenue.github.io/api/cancel): Cancel a pending order.
-- [Refund](https://nermalcat69.github.io/ccavenue.github.io/api/refund): Refund a previously executed order/transaction.
-- [Status](https://nermalcat69.github.io/ccavenue.github.io/api/status): Look up the status of a transaction/order.
-- [Order Lookup](https://nermalcat69.github.io/ccavenue.github.io/api/order-lookup): Search transactions/orders by criteria.
-- [Pending Orders](https://nermalcat69.github.io/ccavenue.github.io/api/pending-orders): List transactions awaiting confirmation or cancellation.
-- [Update Billing Details](https://nermalcat69.github.io/ccavenue.github.io/api/update-billing-details): Update customer billing information for an order.
-- [Update Merchant Param](https://nermalcat69.github.io/ccavenue.github.io/api/update-merchant-param): Add extra merchant parameters against a reference number.
+- [Confirm](https://nermalcat69.github.io/ccavenue-api/api/confirm): Confirm a pending order for settlement.
+- [Cancel](https://nermalcat69.github.io/ccavenue-api/api/cancel): Cancel a pending order.
+- [Refund](https://nermalcat69.github.io/ccavenue-api/api/refund): Refund a previously executed order/transaction.
+- [Status](https://nermalcat69.github.io/ccavenue-api/api/status): Look up the status of a transaction/order.
+- [Order Lookup](https://nermalcat69.github.io/ccavenue-api/api/order-lookup): Search transactions/orders by criteria.
+- [Pending Orders](https://nermalcat69.github.io/ccavenue-api/api/pending-orders): List transactions awaiting confirmation or cancellation.
+- [Update Billing Details](https://nermalcat69.github.io/ccavenue-api/api/update-billing-details): Update customer billing information for an order.
+- [Update Merchant Param](https://nermalcat69.github.io/ccavenue-api/api/update-merchant-param): Add extra merchant parameters against a reference number.
 
 ## Customer & Payment Options
 
-- [Delete Customer](https://nermalcat69.github.io/ccavenue.github.io/api/delete-customer): Delete all saved payment options for a customer.
-- [Delete Customer Payment Option](https://nermalcat69.github.io/ccavenue.github.io/api/delete-customer-payment-option): Delete a specific saved payment option.
-- [Add Customer Payment Option](https://nermalcat69.github.io/ccavenue.github.io/api/add-customer-payment-option): Add another payment option for a registered customer.
-- [Get Customer Payment Option](https://nermalcat69.github.io/ccavenue.github.io/api/get-customer-payment-option): List payment options saved for a customer.
+- [Delete Customer](https://nermalcat69.github.io/ccavenue-api/api/delete-customer): Delete all saved payment options for a customer.
+- [Delete Customer Payment Option](https://nermalcat69.github.io/ccavenue-api/api/delete-customer-payment-option): Delete a specific saved payment option.
+- [Add Customer Payment Option](https://nermalcat69.github.io/ccavenue-api/api/add-customer-payment-option): Add another payment option for a registered customer.
+- [Get Customer Payment Option](https://nermalcat69.github.io/ccavenue-api/api/get-customer-payment-option): List payment options saved for a customer.
 
 ## Invoicing
 
-- [Generate Invoice](https://nermalcat69.github.io/ccavenue.github.io/api/generate-invoice): Generate an invoice for a customer.
-- [Generate Recurring Invoice](https://nermalcat69.github.io/ccavenue.github.io/api/generate-recurring-invoice): Generate a recurring invoice for a customer.
-- [Generate Quick Invoice](https://nermalcat69.github.io/ccavenue.github.io/api/generate-quick-invoice): Generate a simplified quick invoice.
-- [Get Item List](https://nermalcat69.github.io/ccavenue.github.io/api/get-item-list): List configured items and tasks used in invoices.
-- [Invoice Lookup](https://nermalcat69.github.io/ccavenue.github.io/api/invoice-lookup): Find invoice/order lookup details.
-- [Update Merchant Invoice Reference No](https://nermalcat69.github.io/ccavenue.github.io/api/update-merchant-invoice-reference-no): Update the invoice reference number after generation.
+- [Generate Invoice](https://nermalcat69.github.io/ccavenue-api/api/generate-invoice): Generate an invoice for a customer.
+- [Generate Recurring Invoice](https://nermalcat69.github.io/ccavenue-api/api/generate-recurring-invoice): Generate a recurring invoice for a customer.
+- [Generate Quick Invoice](https://nermalcat69.github.io/ccavenue-api/api/generate-quick-invoice): Generate a simplified quick invoice.
+- [Get Item List](https://nermalcat69.github.io/ccavenue-api/api/get-item-list): List configured items and tasks used in invoices.
+- [Invoice Lookup](https://nermalcat69.github.io/ccavenue-api/api/invoice-lookup): Find invoice/order lookup details.
+- [Update Merchant Invoice Reference No](https://nermalcat69.github.io/ccavenue-api/api/update-merchant-invoice-reference-no): Update the invoice reference number after generation.
 
 ## Settlements & Payouts
 
-- [Bin Details](https://nermalcat69.github.io/ccavenue.github.io/api/bin-details): Fetch card details for a BIN number.
-- [PayId Details](https://nermalcat69.github.io/ccavenue.github.io/api/payid-details): List transactions for a given PayId.
-- [Payouts Summary](https://nermalcat69.github.io/ccavenue.github.io/api/payouts-summary): List payout summary for a settlement date.
-- [Get Refund Details](https://nermalcat69.github.io/ccavenue.github.io/api/get-refund-details): Fetch refund information for a transaction.
-- [Get Settlement Details](https://nermalcat69.github.io/ccavenue.github.io/api/get-settlement-details): Fetch settlement details such as PayId and UTR number.
-- [Consolidate Payout Summary](https://nermalcat69.github.io/ccavenue.github.io/api/consolidate-payout-summary): List consolidated payout summary for a settlement date.
-- [Consolidate Settlement Details](https://nermalcat69.github.io/ccavenue.github.io/api/consolidate-settlement-details): List consolidated settlement details for an order/reference number.
+- [Bin Details](https://nermalcat69.github.io/ccavenue-api/api/bin-details): Fetch card details for a BIN number.
+- [PayId Details](https://nermalcat69.github.io/ccavenue-api/api/payid-details): List transactions for a given PayId.
+- [Payouts Summary](https://nermalcat69.github.io/ccavenue-api/api/payouts-summary): List payout summary for a settlement date.
+- [Get Refund Details](https://nermalcat69.github.io/ccavenue-api/api/get-refund-details): Fetch refund information for a transaction.
+- [Get Settlement Details](https://nermalcat69.github.io/ccavenue-api/api/get-settlement-details): Fetch settlement details such as PayId and UTR number.
+- [Consolidate Payout Summary](https://nermalcat69.github.io/ccavenue-api/api/consolidate-payout-summary): List consolidated payout summary for a settlement date.
+- [Consolidate Settlement Details](https://nermalcat69.github.io/ccavenue-api/api/consolidate-settlement-details): List consolidated settlement details for an order/reference number.
